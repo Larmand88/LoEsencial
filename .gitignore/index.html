@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html"; charset="UTF-8" />
+	<title>Notas - Escuela</title>
+</head>
+<style>
+  table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+<body>
+<header>
+	<h1>Notas del Curso</h1>
+
+</header>
+
+<nav>
+	<button onclick="mostrarObjeto()"> Mostrar Objetos</button>
+	<button onclick="mostrarPromedio()">Nota Promedio</button>
+	<button onclick="mostrarMayor()">Nota Mayor</button>
+	<button onclick="mostrarMenor()">Nota Menor</button>
+</nav>
+
+<p id="mostrarObjetos"></p>
+
+</body>
+
+<script>
+var estudiantes = [
+    {
+        "codigo": "001",
+        "nombre": "Nubia Tellez",
+        "nota": 93
+    } ,
+    {
+        "codigo": "002",
+        "nombre": "Santiago Aguilar",
+        "nota": 100
+    } ,
+    {
+        "codigo": "003",
+        "nombre": "Luis Aguilar",
+        "nota": 80
+    } ,
+    {
+        "codigo": "004",
+        "nombre": "Johnny Mena",
+        "nota": 40
+    } ,
+    {
+        "codigo": "005",
+        "nombre": "Erick Zamora",
+        "nota": 70
+    } ,
+    {
+        "codigo": "006",
+        "nombre": "Claudia Tellez",
+        "nota": 80
+    } ,
+    {
+        "codigo": "007",
+        "nombre": "Elda Tellez",
+        "nota": 91
+    } ,
+    {
+        "codigo": "008",
+        "nombre": "Roger Ramirez",
+        "nota": 70
+    } ,
+    {
+        "codigo": "009",
+        "nombre": "Piero Ubilla",
+        "nota": 45
+    } ,
+    {
+        "codigo": "010",
+        "nombre": "Grasiela Bastos",
+        "nota": 82
+    }
+];
+
+function mostrarObjeto(){
+  tableOutput = "<table><tr><th>Codigo</th><th>Nombre</th><th>Nota</th><tr>"
+ for (var i = 0; i < estudiantes.length; i++) {
+   tableOutput += "<tr><td>" + estudiantes[i].codigo + "</td><td>" + estudiantes[i].nombre + "</td><td>" + estudiantes[i].nota +"</td></tr>"
+ }
+ tableOutput += "</table>"
+ document.getElementById('mostrarObjetos').innerHTML = tableOutput
+}
+function mostrarObjeto(){
+  tableOutput = "<table><tr><th>Codigo</th><th>Nombre</th><th>Nota</th><tr>"
+ for (var i = 0; i < estudiantes.length; i++) {
+   tableOutput += "<tr><td>" + estudiantes[i].codigo + "</td><td>" + estudiantes[i].nombre + "</td><td>" + estudiantes[i].nota +"</td></tr>"
+ }
+ tableOutput += "</table>"
+ document.getElementById('mostrarObjetos').innerHTML = tableOutput
+}
+function mostrarPromedio(){
+  tableOutput = 0
+ for (var i = 0; i < estudiantes.length; i++) {
+   tableOutput = tableOutput + estudiantes[i].nota
+ }
+ console.log(i);
+ var maximaNota = tableOutput / i
+ document.getElementById('mostrarObjetos').innerHTML = maximaNota
+}
+function mostrarMenor(){
+  tableOutput = []
+ for (var i = 0; i < estudiantes.length; i++) {
+     tableOutput.push(estudiantes[i].nota)
+ }
+ console.log(tableOutput);
+ var minNota = Math.min.apply(null,tableOutput)
+ document.getElementById('mostrarObjetos').innerHTML = minNota
+}
+function mostrarMayor(){
+  tableOutput = []
+ for (var i = 0; i < estudiantes.length; i++) {
+     tableOutput.push(estudiantes[i].nota)
+ }
+ var maximaNota = Math.max.apply(null,tableOutput);
+ document.getElementById('mostrarObjetos').innerHTML = maximaNota
+}
+
+</script>
+</html>
